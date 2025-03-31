@@ -15,6 +15,12 @@ files:
   - name: hangman_words.py
     visible: true
     learner_created: false
-status: Unchecked
-record: -1
+  - name: task_result.py
+    visible: true
+    learner_created: true
+  - name: hang_man.py
+    visible: true
+    learner_created: true
+status: Solved
+record: 5
 post_submission_on_open: true
