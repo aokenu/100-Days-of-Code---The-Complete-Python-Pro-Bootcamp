@@ -8,6 +8,9 @@ from scoreboard import ScoreBoard
 
 import turtle
 
+ALIGNMENT = "center"
+FONT = ("Courier", 14, "normal")
+
 # Create a new screen
 screen = Screen()
 
@@ -37,7 +40,7 @@ screen.onkey(snake.right, "d")
 
 snake.create_snake()
 score.display_score()
-
+score.pencolor("white")
 
 game_is_on = True
 
@@ -46,12 +49,22 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
+    # Detect collision with food.
     if snake.segments[0].distance(food) < 15:
         food.refresh()
+        snake.extend()
         score.new_score()
         score.display_score()
 
+    # Detect collision with wall.
+    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or snake.segments[0].ycor() < -280:
+        game_is_on = False
+        score.game_over()
 
-
+    # Detect collision with tail.
+    for segment in snake.segments[1:]:
+        if snake.segments[0].distance(segment) < 10:
+            game_is_on = False
+            score.game_over()
 
 screen.exitonclick()

@@ -24,3 +24,6 @@ class ScoreBoard(Food):
         self.sb.clear()
         self.sb.write(f"Score : {self.live_score} ", align=ALIGNMENT, font=FONT)
 
+    def game_over(self):
+        self.sb.goto(0, 0)
+        self.sb.write("GAME OVER!", align=ALIGNMENT, font=FONT)
