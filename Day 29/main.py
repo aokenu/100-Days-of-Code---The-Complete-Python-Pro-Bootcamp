@@ -4,6 +4,8 @@ import csv
 import string
 import random
 import pyperclip
+import json
+
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -32,20 +34,42 @@ def get_info():
     get_web_info = website_entry.get()
     get_email_info = email_entry.get()
     get_pass_info = password_entry.get()
+    new_data = {
+        get_web_info: {
+        "email": get_email_info,
+        "password": get_pass_info,
+    }
+    }
 
     if len(get_web_info) == 0 or len(get_pass_info) == 0 or len(get_web_info) == 0:
         messagebox.showinfo(title="Oops", message="Please make sure you have not left any field empty")
     else:
-        is_ok = messagebox.askokcancel(title=get_web_info, message=f"These are the details entered: \n Email:{get_email_info}\n Password:{get_pass_info}\n Is it okay to save? ")
+        try:
+            with open("data.json", "r") as data_file:
+                # Reading old data
+                data = json.load(data_file)
+                # Updating new data
+                data.update(new_data)
+        except Exception:
+            print("No such file exist")
+            data = {}
+        except Exception:
+            with open("data.json", "x") as data_file:
+                data = {}
+                # Reading old data
+                data = json.load(data_file)
+                # Updating new data
+                data.update(new_data)
+        else:
+            print("None")
 
-        if is_ok:
-            my_info = f"{get_web_info} | {get_email_info} | {get_pass_info}"
-            with open("data.txt", "a") as file:
-                file.write(f"{my_info}\n")
-            clear_fields()
-            print(my_info)
 
+        with open("data.json", "w") as data_file:
+            #saving the updated data
+            json.dump(data, data_file, indent=4)
 
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
