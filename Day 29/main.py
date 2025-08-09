@@ -8,7 +8,7 @@ import json
 
 
 
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+# ------------------------------------ PASSWORD GENERATOR ------------------------------------------------------------ #
 numbers = list(string.digits)
 alphabet = list(string.ascii_lowercase + string.ascii_uppercase)
 special_chars = list(string.punctuation)
@@ -23,7 +23,7 @@ def generate_password():
     pyperclip.copy(passwd)
 
 
-# ---------------------------- SAVE PASSWORD ------------------------------- #
+# ----------------------------------- SAVE PASSWORD ------------------------------------------------------------------ #
 # function to clear entry text
 def clear_fields():
     website_entry.delete(0, END)
@@ -31,7 +31,7 @@ def clear_fields():
 
     # function to get and save details entered into the entry fields
 def get_info():
-    get_web_info = website_entry.get()
+    get_web_info = website_entry.get().title()
     get_email_info = email_entry.get()
     get_pass_info = password_entry.get()
     new_data = {
@@ -48,44 +48,62 @@ def get_info():
             with open("data.json", "r") as data_file:
                 # Reading old data
                 data = json.load(data_file)
-                # Updating new data
-                data.update(new_data)
-        except Exception:
-            print("No such file exist")
-            data = {}
-        except Exception:
-            with open("data.json", "x") as data_file:
-                data = {}
-                # Reading old data
-                data = json.load(data_file)
-                # Updating new data
-                data.update(new_data)
+        except FileNotFoundError:
+            with open("data.json", "w") as data_file:
+                json.dump(new_data, data_file, indent=4)
         else:
-            print("None")
+            # Updating new data
+            data.update(new_data)
+
+            with open("data.json", "w") as data_file:
+                #saving the updated data
+                json.dump(data, data_file, indent=4)
+        finally:
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
+
+# -------------------------------------FIND PASSWORD ------------------------------------------------------------------#
+def find_password():
+    web_search = website_entry.get().title()
+    if len(web_search) == 0:
+        messagebox.showinfo(title="Oops", message="Please make sure you have not left any field empty")
+    else:
+        try:
+            with open("data.json", "r") as search_file:
+                # Reading old data
+                working_file = json.load(search_file)
+        except FileNotFoundError:
+            messagebox.showinfo(title="Missing File", message="No Such Data File Found!")
+
+        else:
+            try:
+                # iterate over the records in the working files to check if the search entry match any existing record
+                if web_search in working_file:
+                    email = working_file[web_search]["email"]
+                    password = working_file[web_search]["password"]
+                    messagebox.showinfo(title=web_search, message=f"Email: {email}\nPassword: {password}")
+                else:
+                    messagebox.showinfo(title="Oops", message="No details for the website exists!")
+            finally:
+                website_entry.delete(0, END)
 
 
-        with open("data.json", "w") as data_file:
-            #saving the updated data
-            json.dump(data, data_file, indent=4)
-
-            website_entry.delete(0, END)
-            password_entry.delete(0, END)
 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ------------------------------------ UI SETUP ---------------------------------------------------------------------- #
 window = Tk()
 window.title("Password Manager")
 window.config(padx=20, pady=20)
 
 
-#---------------------Canvas----------------------------
+#-------------------------------------- Canvas ------------------------------------------------------------------------#
 canvas = Canvas(height=200, width=200)
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
 
-#--------------------Labels-----------------------------
+#-------------------------------------------- Labels ------------------------------------------------------------------#
 # define a label for the website field
 website_label = Label(text="Website:")
 website_label.grid(row=1, column=0, pady=2)
@@ -100,34 +118,47 @@ password_label = Label(text="Password:")
 password_label.grid(row=3, column=0, pady=2)
 
 
-#-----------------Entry Field---------------------------
-# create a text field for the website
-website_entry = Entry(width=45)
-website_entry.grid(row=1, column=1, columnspan=2, pady=2)
-website_entry.focus()
 
+# Create a Frame to Align "Website" Input and the "Search" Button
+website_frame = Frame(window)
+website_frame.grid(row=1, column=1, columnspan=2)
+
+# "Website" entry field inside the Frame
+website_entry = Entry(website_frame, width=24)
+website_entry.grid(row=0, column=0, padx=9, pady=2)
+
+#"Search" button inside the Frame
+search_btn = Button(website_frame, text="Search", width=14, command=find_password)
+search_btn.grid(row=0, column=1,padx=10, pady=2)
+
+
+#---------------------------------------- Entry Field -----------------------------------------------------------------#
 # create a text field for the email/username
 email_entry = Entry(width=45)
 email_entry.grid(row=2, column=1, columnspan=2, pady=2)
 email_entry.insert(0, "tkguru@gmail.com")
 
 
-
 # Create a Frame to Align Password Input and Button
 password_frame = Frame(window)
 password_frame.grid(row=3, column=1, columnspan=2)
 
+# Password entry field inside the Frame
 password_entry = Entry(password_frame, width=24)
 password_entry.grid(row=0, column=0, padx=9, pady=2)
 
-
-#-------------------Buttons-----------------------------
+#Password button inside the Frame
 gen_passwd_btn = Button(password_frame, text="Generate Password", width=14, command=generate_password)
 gen_passwd_btn.grid(row=0, column=1,padx=10, pady=2)
+
+
+#--------------------------------------------- Buttons ----------------------------------------------------------------#
 
 # create a button for saving generated password
 add_passwd_btn = Button(text="Add", width=38, command=get_info)
 add_passwd_btn.grid(column=1, columnspan=2, row=4, pady=2)
+
+
 
 
 
