@@ -61,7 +61,7 @@ temp_list = csv_data["temp"]
 
 # Create a DataFrame from the squirrel data
 data = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-grey_squirrel_count = len(data[data["Primary Fur Color"] == "Gray"])
+
 red_squirrel_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
 black_squirrel_count = len(data[data["Primary Fur Color"] == "Black"])
 
@@ -73,3 +73,5 @@ data_dict = {
 df = pd.DataFrame(data_dict)
 print(df)
 df.to_csv("new_squirrel_data.csv")
+
+grey_squirrel_count = data["Primary Fur Color"]

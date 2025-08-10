@@ -1,0 +1,12 @@
+================ STEPS TO TAKE TO COMPLETE THIS PROJECT ====================
+Create the flashcard window
+Setup the canvas with the image and the button images
+
+Create a display of each the german word
+Create a display of each the english word
+Flip the card to the corresponding english word after 3 seconds
+Setup the "wrong button" to select if you got the meaning wrong.
+Setup the "right button" to select if you got the meaning correctly.
+Display another german word if you got the meaning wrong and the word remains in the list of words to display subsequently.
+Display another german word if you got the meaning correctly, but remove the word from the list of subsequent words to display.
+
