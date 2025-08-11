@@ -1,0 +1,7 @@
+Hallo Franklyn,
+
+ich hoffe, es geht dir gut.
+Dies ist nur eine kurze Nachricht, um zu testen, ob mein E-Mail-Versand mit Python funktioniert.
+
+Viele Grüße
+Austine
