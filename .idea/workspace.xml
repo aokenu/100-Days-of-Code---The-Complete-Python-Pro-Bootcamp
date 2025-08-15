@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f277bfab-335d-4b5f-8f4e-bcfa0c719cf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day 33/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/100-Days-of-Code---The-Complete-Python-Pro-Bootcamp.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 32/birthday-wisher-extrahard-start/birthdays.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Day 32/birthday-wisher-extrahard-start/birthdays.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day 33/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day 33/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +189,29 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.main (6)">
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="100-Days-of-Code---The-Complete-Python-Pro-Bootcamp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day 34" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 34/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="100-Days-of-Code---The-Complete-Python-Pro-Bootcamp" />
       <option name="ENV_FILES" value="" />
@@ -228,28 +248,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 32/birthday-wisher-extrahard-start/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (4)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="100-Days-of-Code---The-Complete-Python-Pro-Bootcamp" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day 31" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 31/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -329,16 +327,16 @@
       <item itemvalue="Python.main (6)" />
       <item itemvalue="Python.main (5)" />
       <item itemvalue="Python.main (3)" />
+      <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.main (2)" />
-      <item itemvalue="Python.main (4)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (6)" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main (5)" />
+        <item itemvalue="Python.main (6)" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main (2)" />
-        <item itemvalue="Python.main (4)" />
       </list>
     </recent_temporary>
   </component>
