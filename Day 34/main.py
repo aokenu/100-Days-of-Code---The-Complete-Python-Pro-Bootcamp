@@ -1,11 +1,10 @@
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
+from ui import QuizInterface
 import requests
-import json
-from tkinter import *
 
-window = Tk()
+
 
 
 URL = "https://opentdb.com/api.php"
@@ -38,6 +37,7 @@ for question in quiz_data:
 
 
 quiz = QuizBrain(question_bank)
+quiz_ui = QuizInterface()
 
 while quiz.still_has_questions():
     quiz.next_question()
