@@ -3,9 +3,8 @@ from data import question_data
 from quiz_brain import QuizBrain
 import requests
 import json
-from tkinter import *
+from ui import QuizInterface
 
-window = Tk()
 
 
 URL = "https://opentdb.com/api.php"
