@@ -37,7 +37,7 @@ headers = {
 
 # Posting a pixel
 GRAPH2 =  "graph2"
-pixel_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH2}/20250829"
+pixel_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH2}"
 
 today = datetime.now()
 
@@ -53,5 +53,5 @@ pixel_headers = {
 }
 
 # Calling the POST request to add a pixel for each python topic I studied
-create_pixel = requests.delete(url=pixel_endpoint,  headers=pixel_headers)
+create_pixel = requests.post(url=pixel_endpoint, json=pixel_config, headers=pixel_headers)
 print(create_pixel.text)
