@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "goldstine86"
 TOKEN = "be6db712e18kw8dshd"
@@ -19,16 +20,38 @@ graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 # Defining the parameters for the graph
 graph_config = {
-    "id": "graph1",
-    "name": "Fitness Walk",
-    "unit": "Km",
-    "type": "float",
-    "color": "sora"
+    "id": "graph2",
+    "name": "Learning Python",
+    "unit": "Commit",
+    "type": "int",
+    "color": "shibafu"
 }
 
 headers = {
     "X-USER-TOKEN": TOKEN
 }
 
-get_user = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-print(get_user.text)
+# get_user = requests.get(url=graph_endpoint, json=graph_config, headers=headers)
+# print(get_user.text)
+
+
+# Posting a pixel
+GRAPH2 =  "graph2"
+pixel_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH2}/20250829"
+
+today = datetime.now()
+
+# Defining the config
+pixel_config = {
+    "date": today.strftime("%Y%m%d"),
+    "quantity": "1",
+}
+
+# Creating the authorization header
+pixel_headers = {
+    "X-USER-TOKEN": TOKEN
+}
+
+# Calling the POST request to add a pixel for each python topic I studied
+create_pixel = requests.delete(url=pixel_endpoint,  headers=pixel_headers)
+print(create_pixel.text)
