@@ -28,19 +28,13 @@ data = response.json()
 # print(json.dumps(data, indent=4))
 
 exercise = data["exercises"][0]["name"]
-# print(exercise)
 duration = data["exercises"][0]["duration_min"]
-# print(duration)
 calories = data["exercises"][0]["nf_calories"]
-# print(calories)
 
 date = datetime.now().strftime("%d/%m/%Y")
 
 datetime.now()
-# print(date)
-
 time = datetime.now().strftime("%X")
-# print(time)
 
 url = os.environ["SHEETY_URL"]
 body = {
@@ -61,7 +55,3 @@ header = {
 
 update_workout = requests.post(url=url, json=body, headers=header)
 print(update_workout.text)
-
-
-# response = requests.get(url)
-# print(response.json())
