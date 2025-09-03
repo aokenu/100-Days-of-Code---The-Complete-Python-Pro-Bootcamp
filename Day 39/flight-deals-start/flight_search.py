@@ -1,5 +1,6 @@
 import requests
 from data_manager import DataManager
+import os
 
 class FlightSearch:
     #This class is responsible for talking to the Flight Search API.
@@ -7,8 +8,8 @@ class FlightSearch:
         self.DataManager = data_manager
         self.flight_header = None
         self.token = None
-        self.api_key = "XoDVK2b0umwUcGwGr0clLwzeuVqG6NqA"
-        self.api_secret = "Y3hDAVvLbbnnmlTS"
+        self.api_key = os.environ["FLIGHT_API_KEY"]
+        self.api_secret = os.environ["FLIGHT_API_SECRET"]
         self.url = "https://test.api.amadeus.com/v1/reference-data/locations/cities"
         # self.endpoint = "/shopping/flight-offers"
         self.token_endpoint = "https://test.api.amadeus.com/v1/security/oauth2/token"
