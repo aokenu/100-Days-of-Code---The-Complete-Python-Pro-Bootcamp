@@ -29,24 +29,23 @@ print(flight_data.get_flight_offers())
 
 # Get IATA codes for each city
 
-iata_Code = []
+iata_codes = []
 
 for city in cities:
-    flight_data.get_flight_offers(city)
-    print(iata_Code)
+    code = flight_data.get_flight_offers(city)
+    iata_codes.append(code)
 
 id_range = range(2, 11, 1)
 
 ObjectID = []
 
 
-def add_iataCode():
-    for id in id_range:
-        global ObjectID
-        ObjectID = id
-
-        # print(ObjectID)
-        code = (iata_Code[id])
+# Update Google Sheet with IATA codes
+def add_iata_codes():
+    for idx, code in enumerate(iata_codes, start=2):
+        # handle empty or list values
+        if isinstance(code, list):
+            code = code[0] if code else ""  # take the first element or empty string
 
         body = {
             "price": {
@@ -54,9 +53,9 @@ def add_iataCode():
             }
         }
 
-        url = f"https://api.sheety.co/42901ff3c79bd4dcb77433f745c52d28/flightDeals/prices/{ObjectID}"
+        url = f"https://api.sheety.co/42901ff3c79bd4dcb77433f745c52d28/flightDeals/prices/{idx}"
         response = requests.put(url=url, json=body)
-        print(f"Updating row {ObjectID} with code {code}")
+        print(f"Updating row {idx} with code {code}")
         print(response.text)
 
 
@@ -66,5 +65,5 @@ def get_details():
     data = json.dumps(response.json(), indent=4)
     print(data)
 
-add_iataCode()
+add_iata_codes()
 #get_details()
