@@ -26,7 +26,11 @@ class FlightSearch:
     # Calling the authorization endpoint to get the bearer token
     def get_token(self):
         token_response = requests.post(url=self.token_endpoint, data=self.token_param, headers=self.header)
-        self.token = token_response.json()["access_token"]
+        if token_response.status_code != 200:
+            raise Exception(f"Failed to retrieve token: {token_response.status_code}, {token_response.text}")
+
+        data = token_response.json()
+        self.token = data.get("access_token")
         return self.token
 
     # Calling the flight details URL with the bearer token to get flight details
