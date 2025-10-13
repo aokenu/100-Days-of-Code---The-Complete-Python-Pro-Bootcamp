@@ -1,0 +1,9 @@
+html {
+    background: black;
+    font-family: "Libre Baskerville", serif;
+}
+
+#div img {
+    border: 5px solid white;
+    align-self: center;
+}
