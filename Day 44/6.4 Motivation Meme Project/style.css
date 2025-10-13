@@ -1,9 +1,33 @@
 html {
-    background: black;
+    background-color: black;
     font-family: "Libre Baskerville", serif;
+    color: white;
+    text-align: center;
 }
 
-#div img {
-    border: 5px solid white;
-    align-self: center;
+
+div {
+    width: 50%;
+    margin: 100px auto
 }
+
+
+.image {
+    width: 100%;
+    border: 5px solid white;
+}
+
+h1 {
+    font-family: "Libre Baskerville", serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    font-size: 28px;
+  }
+  
+  p {
+    font-family: "Caveat", cursive;
+    font-size: 26px;
+    margin-top: 10px;
+    color: #e2e2e2;
+  }
