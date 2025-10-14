@@ -14,4 +14,40 @@ title = soup.title
 
 # print(soup.prettify())
 
-print(soup.a)
+# print(soup.a)
+
+# To find all the tags where the tag name is "a"
+all_anchor_tags = soup.find_all(name="a")
+print(all_anchor_tags)
+
+# To get all the text within the anchor tags
+for tag in all_anchor_tags:
+    print(tag.getText())
+
+# To get the URLs of the href
+for tag in all_anchor_tags:
+    print(tag.get("href"))
+
+# Finding h1 elements with id = "name"
+heading = soup.find_all(name="h1", id="name")
+print(heading)
+
+
+# Finding h3 elements with class = "class"
+section_heading = soup.find_all(name="h3", class_="heading")
+print(section_heading)
+
+
+# To locate the value of "a" tag inside a "p" tag
+company_url = soup.select_one(selector="p a")
+print(company_url.text)
+
+
+# To get the value of an id selector
+name = soup.select_one(selector="#name")
+print(name)
+
+
+# To locate an element by class
+headings = soup.select(".heading")
+print(headings)
