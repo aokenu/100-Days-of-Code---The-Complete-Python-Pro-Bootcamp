@@ -61,5 +61,12 @@ data = response.text
 
 soup = BeautifulSoup(data, 'html.parser') # creating a soup object
 
-article_title = soup.find(name="span", class_="titleline")
-print(article_title.text)
+article_tag = soup.find(name="span", class_="titleline")
+article_text = article_tag.getText()
+article_link = article_tag.find("a").get("href")
+article_upvote = soup.find(name="span", class_="score").getText()
+
+print(article_tag) 
+print(article_text)
+print(article_link)
+print(article_upvote)
