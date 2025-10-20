@@ -61,12 +61,31 @@ data = response.text
 
 soup = BeautifulSoup(data, 'html.parser') # creating a soup object
 
-article_tag = soup.find(name="span", class_="titleline")
-article_text = article_tag.getText()
-article_link = article_tag.find("a").get("href")
-article_upvote = soup.find(name="span", class_="score").getText()
+article_tag = soup.find_all(name="span", class_="titleline")
+article_texts = []
+article_links = []
+for article in article_tag:
+    a_tag = article.find("a")
+    text = a_tag.getText()
+    link = a_tag.get("href")
+    article_texts.append(text)
+    article_links.append(link)
 
-print(article_tag) 
-print(article_text)
-print(article_link)
-print(article_upvote)
+upvotes_tags = soup.find_all(name="span", class_="score") 
+article_upvotes = [int(upvote.getText().split()[0]) for upvote in upvotes_tags]
+
+
+
+# print(article_texts)
+# print(article_links)
+# print(article_upvotes)
+
+
+# print(article_texts, article_links, article_upvotes)
+
+largest_number = max(article_upvotes)
+print(largest_number)
+largest_index = article_upvotes.index(largest_number)
+
+print(article_links[largest_index])
+print(article_texts[largest_index])
