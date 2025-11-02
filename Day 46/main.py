@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from auth_spotify import GetToken
+from playlist import PlayList
 
 
 
@@ -36,6 +37,24 @@ with open("hit_song.csv", "w", encoding="utf-8", newline="") as file:
 print(hit_songs)
 
 
-token = GetToken()
+from auth_spotify import GetToken
+from playlist import PlayList
 
-token.getToken()
+
+
+# Spotify auth flow
+token = GetToken()
+print("Go to this URL to authorize:\n", token.get_authorize_url())
+
+code = input("\nPaste the 'code' from your callback URL: ").strip()
+auth_data = token.get_OAuth(code)
+
+access_token = auth_data["access_token"]
+print("Access Token Received ✅")
+
+# Initialize playlist with access token
+playlist = PlayList(access_token)
+playlist.get_userId()
+playlist.createPlaylist()
+playlist.search_track()
+playlist.add_track()
