@@ -1,5 +1,4 @@
 import requests
-import json
 from bs4 import BeautifulSoup
 
 
@@ -20,7 +19,7 @@ class PriceTag:
 
         # extracting the content of the web page using the created instance of Beautifulsoup
         web_page = self.soup.find(name="span", class_="a-price-whole")
-        get_price = float(web_page.text)
+        self.get_price = float(web_page.text)
 
-        # Print the output of the scrapped value
-        print(get_price)
+        # return the output of the scrapped value
+        return self.get_price

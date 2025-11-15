@@ -5,7 +5,7 @@ from auth_spotify import GetToken
 class PlayList(GetToken):
 
     def __init__(self, bearer_token):
-        super().__init__()  # 🔥 Inherit token logic from GetToken
+        super().__init__()  #  Inherit token logic from GetToken
         self.user_id = "31v2xt4iowhthmx3wb56fjq4s344"
         self.spotify_search_url = "https://api.spotify.com/v1"
         self.search_song = "https://api.spotify.com/v1/search?q=remaster%20track%3ABack%20In%20The%20Saddle&type=track"
