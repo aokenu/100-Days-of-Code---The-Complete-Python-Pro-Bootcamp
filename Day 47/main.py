@@ -1,16 +1,13 @@
 import requests
 import json
 from bs4 import BeautifulSoup
-
-URL = "https://appbrewery.github.io/instant_pot/"
-
-# calling the url with a get request
-response = requests.get(URL)
-data = response.text
+from item_price import PriceTag
 
 
-# create an instance of beatifulsoup
-soup = BeautifulSoup(data, 'html.parser')
-web_page = soup.find(name="span", class_="a-price-whole")
-get_price = float(web_page.text)
-print(get_price)
+# creating an instance of PriceTag
+item_price = PriceTag()
+
+# calling the get_price method from the PriceTag class
+item_price.get_price()
+
+
