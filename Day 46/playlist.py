@@ -35,8 +35,10 @@ class PlayList(GetToken):
         }
         response = requests.post(self.spotify_search_url + self.create_playlist, json=self.body, headers=self.header)
         status = response.status_code
-        data = response.text
-        print(data)
+        data = response.json()
+        self.playlist_id = data["id"]
+        # return self.playlist_id
+        print(self.playlist_id)
 
 
     def search_track(self):
@@ -55,14 +57,16 @@ class PlayList(GetToken):
     def add_track(self):
         self.data = {
         "uris": [
-            self.track_id
+            "spotify:track:5RNV6RtIJGWnfbhQJVZ5iq"
         ],
-        "position": 0
+        "position": 1
         }
-        response = requests.post(self.spotify_search_url + f"/playlists/{self.track_id}/tracks", params=self.data, headers=self.header)
+        playlist_id = "2oaIj95xXxrN5RefKGC0H7"
+        url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
+        response = requests.post(url, params=self.data, headers=self.header)
         data = response.json()
-        print(response.text)
-        if data.status_code == 200:
-            print(f"track name {self.track_name} successfully added to playlist")
+        if response.status_code == 200:
+            print(response.text)
+            print("Track was successfully added to playlist")
 
 
