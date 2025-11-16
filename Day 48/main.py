@@ -19,11 +19,28 @@ driver.get(URL)
 # price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction")
 
 # print(f"The price is {price_dollar.text}.{price_cents.text}")
+ 
+# ===================================== OTHER WAYS OF FINDING ELEMENTS ======================
+
+# # finding elements by name
+# search_bar = driver.find_element(By.NAME, value="q")
+# print(search_bar.get_attribute("placeholder"))
+
+# # finding elements by id
+# button = driver.find_element(By.ID, value="submit")
+# print(button.size)
+
+# # finding elements by css element
+# documentation_link = driver.find_element(By.CSS_SELECTOR, value=".documentation-widget a")
+# print(documentation_link.text)
 
 
-# finding elements by name
-get_input = driver.find_element(By.NAME, value="q")
-print(get_input.text)
+# ================================ FINDING ELEMENTS BY XPATH ================================
+
+
+
+
+
 
 
 # close the entire program
