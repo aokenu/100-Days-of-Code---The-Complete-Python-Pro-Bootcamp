@@ -1,10 +1,14 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
 
 # URL = "https://www.amazon.com/dp/B075CYMYK6?ref_=cm_sw_r_cp_ud_ct_FM9M699VKHTT47YD50Q6&th=1&language=en_US&currency=USD"
 
-URL = "https://www.python.org/"
+# URL = "https://www.python.org/"
+
+URL = "https://en.wikipedia.org/wiki/Main_Page"
 
 # Keep Chrome browser open after program finishes
 chrome_options = webdriver.ChromeOptions()
@@ -45,6 +49,18 @@ driver.get(URL)
 # print(menu.text)
 
 
+# click_link = driver.find_element(By.LINK_TEXT, value="Content portals")
+# click_link.click()
+
+# find the "Search" input by name
+search = driver.find_element(By.NAME, value="search")
+
+time.sleep(2)
+
+# send the keyboard input to Selenium
+search.send_keys("Python", Keys.ENTER)
+
+time.sleep(2)
 
 # close the entire program
 driver.quit()
