@@ -15,14 +15,22 @@ chrome_options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(URL)
 
+# this time will make surethe website loads completely with the language selection before proceeding to the next line of code
+time.sleep(5)
 
-select_lang = driver.find_element(By.XPATH, value='//*[@id="langSelect-EN"]')
+select_lang = driver.find_element(By.ID, value='langSelect-EN')
+
+
 # select the "English" button from the langaage menu
+select_lang.click()
 
-print(select_lang.text)
+time.sleep(10)
 
+# click the captcha
+captcha = driver.find_element(By.XPATH, value='//*[@id="GjRM0"]/div/label/input')
 
-
+time.sleep(5)
+captcha.click()
 
 
 
