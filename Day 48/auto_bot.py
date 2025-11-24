@@ -1,6 +1,8 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
@@ -27,10 +29,10 @@ select_lang.click()
 time.sleep(10)
 
 # click the captcha
-captcha = driver.find_element(By.XPATH, value='//*[@id="GjRM0"]/div/label/input')
-
-time.sleep(5)
-captcha.click()
+checkbox = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.ID, "checkbox"))
+)
+checkbox.click()
 
 
 
