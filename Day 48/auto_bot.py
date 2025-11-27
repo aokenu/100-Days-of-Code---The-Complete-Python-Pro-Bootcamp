@@ -5,6 +5,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+start_time = time.time()
+end_time = start_time + 5    # 5 seconds window
 
 URL = "https://ozh.github.io/cookieclicker/"
 
@@ -33,11 +35,10 @@ checkbox = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.ID, 'bigCookie'))
 )
 
-game_on = True
 
-while game_on:
-    while not time.sleep(5):
-        checkbox.click()
+start = time.time()
+while time.time() - start < 5:
+    checkbox.click()
     time.sleep(5)
 
 
