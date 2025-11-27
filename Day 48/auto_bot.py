@@ -37,6 +37,7 @@ game_on = True
 
 while game_on:
     checkbox.click()
+    time.sleep(5)
 
 
 
