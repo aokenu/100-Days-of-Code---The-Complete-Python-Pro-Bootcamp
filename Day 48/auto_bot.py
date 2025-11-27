@@ -30,7 +30,7 @@ time.sleep(10)
 
 # click the captcha
 checkbox = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.ID, "checkbox"))
+    EC.element_to_be_clickable((By.XPATH, '//*[@id="GjRM0"]/div/label/input'))
 )
 checkbox.click()
 
