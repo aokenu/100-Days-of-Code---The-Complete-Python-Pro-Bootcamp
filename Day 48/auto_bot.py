@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-URL = "https://orteil.dashnet.org/cookieclicker/"
+URL = "https://ozh.github.io/cookieclicker/"
 
 
 # Keep Chrome browser open after program finishes
@@ -26,13 +26,17 @@ select_lang = driver.find_element(By.ID, value='langSelect-EN')
 # select the "English" button from the langaage menu
 select_lang.click()
 
-time.sleep(10)
+time.sleep(5)
 
 # click the captcha
 checkbox = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, '//*[@id="GjRM0"]/div/label/input'))
+    EC.element_to_be_clickable((By.ID, 'bigCookie'))
 )
-checkbox.click()
+
+game_on = True
+
+while game_on:
+    checkbox.click()
 
 
 
