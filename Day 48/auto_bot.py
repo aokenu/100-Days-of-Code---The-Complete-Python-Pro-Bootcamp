@@ -37,8 +37,12 @@ checkbox = WebDriverWait(driver, 10).until(
 
 
 start = time.time()
-while time.time() - start < 5:
-    checkbox.click()
+
+game_on = True
+
+while game_on:
+    while time.time() - start < 5:
+        checkbox.click()
     time.sleep(5)
 
 
