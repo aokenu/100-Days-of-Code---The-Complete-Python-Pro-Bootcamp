@@ -6,3 +6,6 @@ import time
 
 
 URL = "https://appbrewery.github.io/gym/"
+
+chrome_options = webdriver.ChromeDrivers()
+
