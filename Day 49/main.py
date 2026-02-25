@@ -8,4 +8,5 @@ import time
 URL = "https://appbrewery.github.io/gym/"
 
 chrome_options = webdriver.ChromeDrivers()
+chrome_options.add_experimental_option("detach", True)
 
