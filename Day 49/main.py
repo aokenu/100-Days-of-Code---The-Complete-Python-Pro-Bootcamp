@@ -10,3 +10,7 @@ URL = "https://appbrewery.github.io/gym/"
 chrome_options = webdriver.ChromeDrivers()
 chrome_options.add_experimental_option("detach", True)
 
+
+# creating an instance of the driver
+driver = webdriver.Chrome(option=chrome_options)
+driver.get(URL)
