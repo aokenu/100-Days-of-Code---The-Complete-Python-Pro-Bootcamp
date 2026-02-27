@@ -30,5 +30,8 @@ user_login = driver.find_element(By.ID, value="login-button")
 user_login.click()
 time.sleep(2)
 
+# enter user email
+user_email = driver.find_element(By.ID, value="email-input")
+
 
 # driver.quit()
