@@ -25,4 +25,10 @@ chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
 # launch the browser
 driver.get(GYM_URL)
 
+# click the login button
 user_login = driver.find_element(By.ID, value="login-button")
+user_login.click()
+time.sleep(2)
+
+
+# driver.quit()
