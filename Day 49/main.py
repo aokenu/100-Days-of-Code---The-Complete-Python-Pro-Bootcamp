@@ -36,6 +36,6 @@ user_email.send_keys(ACCOUNT_EMAIL)
 time.sleep(2)
 
 # enter user password
-user_pass = driver.find_element(By.ID, value=ACCOUNT_PASSWORD)
+user_pass = driver.find_element(By.ID, value="password-input")
 
 # driver.quit()
