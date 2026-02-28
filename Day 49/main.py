@@ -32,6 +32,9 @@ time.sleep(2)
 
 # enter user email
 user_email = driver.find_element(By.ID, value="email-input")
+user_email.send_keys(ACCOUNT_EMAIL)
+time.sleep(2)
 
+# 
 
 # driver.quit()
