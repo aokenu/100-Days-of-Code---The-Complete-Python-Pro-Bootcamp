@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 
-ACCOUNT_EMAIL = "datadotng@gmail.com" 
+ACCOUNT_EMAIL = "austinepython@test.com" 
 ACCOUNT_PASSWORD = "NP7tZsYipA5XRGC"
 GYM_URL = "https://appbrewery.github.io/gym/"
 
@@ -42,5 +42,11 @@ time.sleep(2)
 
 submit_user = driver.find_element(By.ID, value="submit-button")
 submit_user.click()
+
+
+# book a gym session
+bookings = driver.find_element(By.ID, value="book-button-spin-2026-03-10-1800")
+driver.execure_script("arguments[0].scrollIntoView();", bookings)    
+bookings.click()    
 
 # driver.quit()
