@@ -41,5 +41,6 @@ user_pass.send_keys(ACCOUNT_PASSWORD)
 time.sleep(2)
 
 submit_user = driver.find_element(By.ID, value="submit-button")
+submit_user.click()
 
 # driver.quit()
