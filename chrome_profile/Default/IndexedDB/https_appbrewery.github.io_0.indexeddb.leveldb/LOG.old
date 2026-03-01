@@ -1,0 +1,9 @@
+2026/03/06-00:33:26.190 3d1c Reusing MANIFEST D:\Users\Goldstine\Source\repo\100-Days-of-Code---The-Complete-Python-Pro-Bootcamp\chrome_profile\Default\IndexedDB\https_appbrewery.github.io_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/06-00:33:26.190 3d1c Recovering log #13
+2026/03/06-00:33:26.229 3d1c Reusing old log D:\Users\Goldstine\Source\repo\100-Days-of-Code---The-Complete-Python-Pro-Bootcamp\chrome_profile\Default\IndexedDB\https_appbrewery.github.io_0.indexeddb.leveldb/000013.log 
+2026/03/06-00:33:26.283 3d1c Compacting 1@1 + 1@2 files
+2026/03/06-00:33:26.329 3d1c Generated table #16@1: 9024 keys, 389356 bytes
+2026/03/06-00:33:26.330 3d1c Compacted 1@1 + 1@2 files => 389356 bytes
+2026/03/06-00:33:26.367 3d1c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/03/06-00:33:26.368 3d1c Delete type=2 #12
+2026/03/06-00:33:26.368 3d1c Delete type=2 #14

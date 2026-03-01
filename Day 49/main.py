@@ -13,14 +13,14 @@ GYM_URL = "https://appbrewery.github.io/gym/"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
-# creating an instance of the webdriver
-driver = webdriver.Chrome(options=chrome_options)
-
 
 # create a user profile for chrome
 user_data_dir = os.path.join(os.getcwd(), "chrome_profile")
 
 chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+
+# creating an instance of the webdriver
+driver = webdriver.Chrome(options=chrome_options)
 
 # launch the browser
 driver.get(GYM_URL)
