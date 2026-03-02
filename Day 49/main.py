@@ -2,6 +2,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
@@ -18,15 +20,20 @@ chrome_options.add_experimental_option("detach", True)
 user_data_dir = os.path.join(os.getcwd(), "chrome_profile")
 
 chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
-
+x
 # creating an instance of the webdriver
 driver = webdriver.Chrome(options=chrome_options)
 
 # launch the browser
 driver.get(GYM_URL)
 
+# ----------------  Step 2 - Automated Login ----------------
+
+# define the waiting duration
+wait = WebDriverWait(driver, 2)
+
 # click the login button
-user_login = driver.find_element(By.ID, value="login-button")
+email_input = wait.until(EC.element_to_be_clickable(By.ID, "login-button")
 user_login.click()
 time.sleep(2)
 
@@ -45,8 +52,9 @@ submit_user.click()
 
 
 # book a gym session
-bookings = driver.find_element(By.ID, value="book-button-spin-2026-03-10-1800")
-driver.execure_script("arguments[0].scrollIntoView();", bookings)    
-bookings.click()    
+bookings = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "book-button-spin-2026-03-10-1800"))
+)
+driver.execute_script("arguments[0].click();", bookings)     
 
 # driver.quit()
