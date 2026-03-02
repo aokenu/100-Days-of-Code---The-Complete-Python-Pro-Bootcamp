@@ -33,19 +33,20 @@ driver.get(GYM_URL)
 wait = WebDriverWait(driver, 2)
 
 # click the login button
-login_btn = wait.until(EC.element_to_be_clickable(By.ID, "login-button")
+login_btn = wait.until(EC.element_to_be_clickable(By.ID, "login-button"))
 login_btn.click()
 
 
 # enter user email
-user_email = driver.find_element(By.ID, value="email-input")
-user_email.send_keys(ACCOUNT_EMAIL)
-time.sleep(2)
+email_input = wait.until(EC.presence_of_element_located(By.ID, "email-input"))
+email_input.clear()
+email_input.send_keys(ACCOUNT_EMAIL)
+
 
 # enter user password
 user_pass = driver.find_element(By.ID, value="password-input")
 user_pass.send_keys(ACCOUNT_PASSWORD)
-time.sleep(2)
+
 
 submit_user = driver.find_element(By.ID, value="submit-button")
 submit_user.click()
