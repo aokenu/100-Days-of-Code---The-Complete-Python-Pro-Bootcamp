@@ -44,18 +44,15 @@ email_input.send_keys(ACCOUNT_EMAIL)
 
 
 # enter user password
-user_pass = driver.find_element(By.ID, value="password-input")
-user_pass.send_keys(ACCOUNT_PASSWORD)
+password_input = driver.find_element(By.ID, value="password-input")
+password_input.clear()
+password_input.send_keys(ACCOUNT_PASSWORD)
 
 
 submit_user = driver.find_element(By.ID, value="submit-button")
 submit_user.click()
 
 
-# book a gym session
-bookings = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.ID, "book-button-spin-2026-03-10-1800"))
-)
-driver.execute_script("arguments[0].click();", bookings)     
+     
 
 # driver.quit()
