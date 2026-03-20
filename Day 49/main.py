@@ -55,7 +55,8 @@ submit_user.click()
 
 # ----------------  Step 3 - Class Booking: Book Upcoming Tuesday Class  ----------------
 # find all card class
-
+card_class = driver.find_elements(By.CLASS_NAME, "ClassCard_cardContent__WGvPp")
+print(card_class.text)
 
 
 # driver.quit()
