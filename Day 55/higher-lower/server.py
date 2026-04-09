@@ -47,7 +47,7 @@ def get_number(number):
                 f"Good! That's correct.<p></p>"
                 f"<img src='https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif'")
 
-
+ 
 
 
 
