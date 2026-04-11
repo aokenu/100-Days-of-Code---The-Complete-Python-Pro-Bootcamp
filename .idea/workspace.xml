@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f277bfab-335d-4b5f-8f4e-bcfa0c719cf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day 56/name-card/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 56/name-card/static/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 56/name-card/static/images/profile_pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 56/name-card/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 57/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 57/templates/blog.html" afterDir="false" />
+    <list default="true" id="f277bfab-335d-4b5f-8f4e-bcfa0c719cf1" name="Changes" comment="Updated project files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,12 +28,12 @@
     &quot;assignee&quot;: &quot;aokenu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/aokenu/100-Days-of-Code---The-Complete-Python-Pro-Bootcamp.git&quot;,
-    &quot;accountId&quot;: &quot;ef0a66bd-3e68-42b0-9a84-3d9fec9b772d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/aokenu/100-Days-of-Code---The-Complete-Python-Pro-Bootcamp.git",
+    "accountId": "a8affacc-4e7e-44c6-8974-0ef3c2ec91fc"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Day 1/task/solution.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Day 1/task/task.py" root0="FORCE_HIGHLIGHTING" />
@@ -213,7 +207,7 @@
       <recent name="C:\Users\Goldstine\source\100-Days-of-Code---The-Complete-Python-Pro-Bootcamp\Day 56\name-card\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.server (1)">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="decoratorWithArgument" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="100-Days-of-Code---The-Complete-Python-Pro-Bootcamp" />
       <option name="ENV_FILES" value="" />
@@ -236,7 +230,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="flight_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="100-Days-of-Code---The-Complete-Python-Pro-Bootcamp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,11 +239,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day 39/flight-deals-start" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day 57/capstone_project" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 39/flight-deals-start/flight_data.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 57/capstone_project/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,19 +342,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.server" />
       <item itemvalue="Python.server (1)" />
       <item itemvalue="Python.decoratorWithArgument" />
       <item itemvalue="Python.python_decorator" />
-      <item itemvalue="Python.flight_data" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.server (1)" />
         <item itemvalue="Python.server" />
         <item itemvalue="Python.decoratorWithArgument" />
         <item itemvalue="Python.python_decorator" />
-        <item itemvalue="Python.flight_data" />
       </list>
     </recent_temporary>
   </component>
@@ -380,6 +374,15 @@
       <option name="presentableId" value="Default" />
       <updated>1751495554860</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated project files">
+      <option name="closed" value="true" />
+      <created>1775920201632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775920201632</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -395,5 +398,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project files" />
   </component>
 </project>
